@@ -1,0 +1,62 @@
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+.nav {
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    height: 10vh;
+
+    &__section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__logo {
+            border-radius: 50%;
+            background: $teal-primary;
+            color: $white;
+            padding: 0.75rem;
+        }
+
+        &--left {
+            & > :not(:last-child) {
+                display: inline;
+                margin-right: 3rem;
+                @include respond(landscapePhone) {
+                    margin-right: 1.5rem;
+                }
+                @include respond(largePhone) {
+                    margin-right: 0.5rem;
+                }
+            }
+            & > a {
+                text-decoration: none;
+                color: $nav-black;
+            }
+        }
+        &--right {
+            & > :not(:first-child) {
+                display: inline;
+                margin-left: 3rem;
+                @include respond(landscapePhone) {
+                    margin-left: 1.5rem;
+                }
+                @include respond(largePhone) {
+                    margin-left: 0.5rem;
+                }
+            }
+            & > a {
+                text-decoration: none;
+                color: $nav-black;
+            }
+        }
+    }
+}

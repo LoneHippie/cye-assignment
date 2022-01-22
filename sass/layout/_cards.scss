@@ -1,0 +1,15 @@
+@import "../abstract/variables";
+
+.cards {
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.cards__container {
+    display: flex;
+    flex-direction: row;
+
+    & > * {
+        margin: 0 1.5rem;
+    }
+}

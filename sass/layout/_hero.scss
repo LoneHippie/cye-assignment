@@ -1,0 +1,99 @@
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+.hero {
+    position: relative;
+    height: 90vh;
+    border-top: 2px solid rgba(#FFFFFF, 0.0);
+
+    @include respond(laptop) {
+        height: 75vh;
+    }
+    @include respond(landscapePhone) {
+        height: 60vh;
+    }
+
+    &__title {
+        margin-top: 11rem;
+        margin-bottom: 6rem;
+    }
+
+    &__cta {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2.5rem;
+        width: 49.1rem;
+        height: 12.3rem;
+        position: relative;
+
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0px 20px 30px 0px rgba(#47505a1a, 0.1);
+
+        &__text {
+            & > span {
+                color: #7D8186;
+                font-size: 1.3rem;
+                font-weight: 400;
+            }
+            & > div {
+                color: $nav-black;
+                font-weight: 600;
+                font-size: 3rem;
+            }
+        }
+        &__button {
+            height: 6.7rem;
+            width: 19rem;
+
+            color: $white;
+            font-size: 1.4rem;
+            font-weight: 800;
+
+            background: #FE753E;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        &__svg {
+            position: absolute;
+            left: -10%;
+            top: 50%;
+            height: 10rem;
+            width: 9rem;
+
+            opacity: 0.5;
+            z-index: -1;
+        }
+    }
+
+    &__display {
+        position: absolute;
+        top: 2%;
+        left: 14%;
+        display: flex;
+        flex-direction: row;
+        z-index: -1;
+
+        padding: 0 12rem;
+
+        @include respond(landscapePhone) {
+            left: 1%;
+        }
+        @include respond(largePhone) {
+            left: -50%;
+        } 
+
+        & > * {
+            margin: 0 1.5rem;
+
+            z-index: -5;
+
+            @include respond(largePhone) {
+                opacity: 0.7;
+            }
+        }
+    }
+}

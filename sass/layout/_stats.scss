@@ -1,0 +1,124 @@
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-left: 12rem;
+    height: 80rem;
+    width: 100%;
+
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+
+    @include respond(laptop) {
+        padding-left: 9.5rem;
+    }
+    @include respond(laptop-small) {
+        padding-left: 5.5rem;
+    }
+
+    @include respond(tablet) {
+        flex-direction: column;
+        height: 100%;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+
+    &__main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        align-items: flex-start;
+        width: 50%;
+
+        @include respond(tablet) {
+            width: 100%;
+            padding-left: 5.5rem;
+            margin-bottom: 6rem;
+        }
+
+        &--head {
+            & > h2 {
+                margin-bottom: 1rem;
+            }
+            & > p {
+                max-width: 45%;
+            }
+        }
+
+        &--body {
+            margin-top: 5rem;
+
+            & > b {
+                font-size: 8rem;
+                color: $teal-primary;
+                font-weight: 800;
+                line-height: 9rem; 
+            }
+
+            & > p {
+                font-weight: 300;
+            }
+        }
+
+        &--svg {
+            height: 10rem;
+            width: 9rem;
+            position: absolute;
+            top: -8.5%;
+            left: -7.5%;
+
+            opacity: 0.5;
+            z-index: -1;
+
+            @include respond(tablet) {
+                top: -5%;
+                left: 0;
+            }
+        }
+    }
+
+    &__cards {
+        width: 50%;
+        height: 80rem;
+
+        background: #F6FAFA;
+        border-radius: 10px 0px 0px 10px;
+        position: relative;
+
+        @include respond(tablet) {
+            width: 100%;
+            height: 60rem;
+        }
+
+        &--container {
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            align-items: flex-start;
+
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+            padding-right: 12rem;
+            @include respond(laptop) {
+                padding-right: 9.5rem;
+            }
+            @include respond(laptop-small) {
+                padding-right: 5.5rem;
+            }
+            
+            padding-left: 8rem;
+            @include respond(tablet) {
+                padding-left: 5.5rem;
+            }
+        }
+    }
+}

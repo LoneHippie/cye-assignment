@@ -1,0 +1,42 @@
+@import "../abstract/variables";
+
+.promo-card {
+    position: relative;
+    height: 47rem;
+    width: 32rem;
+    border-radius: 10px;
+
+    &__display {
+        height: 47rem;
+        width: 32rem;
+        border-radius: 10px;
+    }
+
+    &__info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #FFFFFF;
+
+        width: 40%;
+        height: 12%;
+        border-radius: 0px 10px 0px 0px;
+
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+        justify-content: flex-end;
+
+        & > div {
+            color: $teal-primary;
+            font-size: 1.4rem;
+            line-height: 1.75rem;
+            font-weight: 700;
+        }
+        & > span {
+            color: #9395A0;
+            font-weight: 400;
+            font-size: 1.3rem;
+        }
+    }
+}
