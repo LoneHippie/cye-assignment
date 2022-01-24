@@ -9,24 +9,36 @@ const DOM = {
 
     navToggle: document.getElementById('nav-toggle'),
     navDesktop: document.getElementById('nav-desktop'),
-    navMobile: document.getElementById('nav-mobile')
+    navMobile: document.getElementById('nav-mobile'),
+    mobileMask: document.getElementById('mobile-mask')
 };
 
-let windowDimensions = window.innerWidth;
-let isScreenMobile = setVisibleNav();
+let windowDimensions;
+let isScreenMobile;
 
 function setVisibleNav() {
     if (windowDimensions > 568) { //desktop mode
         DOM.navDesktop.classList.add('active');
         DOM.navMobile.classList.remove('active');
+        DOM.navMobile.classList.remove('active');
         return false;
     } else { //mobile mode
         DOM.navDesktop.classList.remove('active');
         DOM.navMobile.classList.remove('active');
+        DOM.navMobile.classList.remove('active');
         return true;
     }
 }
-setVisibleNav();
+
+(function init() {
+    //set screen width variable, determine screen type and set appropriate nav
+    windowDimensions = window.innerWidth;
+    isScreenMobile = setVisibleNav();
+    setVisibleNav();
+
+    //on load set scroll position
+    DOM.slider.scrollLeft = 150;
+})()
 
 const onScreenObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -45,11 +57,12 @@ onScreenObserver.observe(DOM.statCard1);
 onScreenObserver.observe(DOM.statCard2);
 onScreenObserver.observe(DOM.statCard3);
 
-//on load set scroll position
-DOM.slider.scrollLeft = 150;
-
-DOM.navToggle.addEventListener('click', (e) => {
+const toggleMobileMenu = () => {
     if (isScreenMobile) {
-        DOM.navMobile.classList.toggle('active')
+        DOM.navMobile.classList.toggle('active');
+        DOM.mobileMask.classList.toggle('active');
     }
-})
+};
+
+DOM.navToggle.addEventListener('click', toggleMobileMenu);
+DOM.mobileMask.addEventListener('click', toggleMobileMenu);

@@ -30,6 +30,22 @@
             }
         }
     }
+
+    &__mask {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($nav-black, 0.5);
+
+        z-index: 300;
+
+        &.active {
+            display: block;
+        }
+    }
 }
 
 .nav {
