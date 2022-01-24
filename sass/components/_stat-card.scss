@@ -9,6 +9,15 @@
         margin-bottom: 8rem;
     }
 
+    opacity: 0;
+    transform: translateX(-25rem);
+    transition: all 600ms;
+
+    &.active {
+        opacity: 1;
+        transform: translate(0);
+    }
+
     &__icon {
         border-radius: 50%;
         background: rgba($teal-primary, 0.1);

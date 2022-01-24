@@ -56,15 +56,24 @@
             }
         }
 
+        &--number {
+            font-size: 8rem;
+            color: $teal-primary;
+            font-weight: 800;
+            line-height: 9rem; 
+
+            opacity: 0;
+            transform: translateY(10rem);
+            transition: all 600ms ease-in;
+
+            &.active {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+
         &--body {
             margin-top: 5rem;
-
-            & > b {
-                font-size: 8rem;
-                color: $teal-primary;
-                font-weight: 800;
-                line-height: 9rem; 
-            }
 
             & > p {
                 font-weight: 300;

@@ -32,6 +32,15 @@
         border-radius: 10px;
         box-shadow: 0px 20px 30px 0px rgba(#47505a1a, 0.1);
 
+        opacity: 0;
+        transform: translateX(-30rem);
+        transition: all 600ms ease-in-out;
+
+        &.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         &__text {
             & > span {
                 color: #7D8186;
