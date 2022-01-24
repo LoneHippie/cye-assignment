@@ -1,10 +1,15 @@
 @import "../abstract/variables";
+@import "../abstract/mixins";
 
 .title-header {
     color: $header-black;
     font-weight: 800;
     font-size: 5.5rem;
     line-height: 6.5rem;
+
+    @include respond(landscapePhone) {
+        font-size: 5rem;
+    }
 }
 
 .title-secondary {

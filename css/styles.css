@@ -32,6 +32,9 @@ body {
   font-weight: 800;
   font-size: 5.5rem;
   line-height: 6.5rem; }
+  @media (max-width: 35.5em) {
+    .title-header {
+      font-size: 5rem; } }
 
 .title-secondary {
   color: #121212;
@@ -78,7 +81,13 @@ body {
   width: 100%;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory; }
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */ }
+  .slider::-webkit-scrollbar {
+    display: none; }
 
 .slider-item {
   scroll-snap-align: none; }
@@ -419,7 +428,8 @@ body {
   padding-bottom: 6rem; }
   @media (max-width: 35.5em) {
     .banner {
-      flex-direction: column; } }
+      flex-direction: column;
+      padding-top: 0rem; } }
   .banner > h2 {
     width: 40%;
     margin-right: 10%; }
