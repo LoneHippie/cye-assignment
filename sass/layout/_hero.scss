@@ -8,9 +8,18 @@
 
     @include respond(laptop) {
         height: 75vh;
+        margin-bottom: 10rem;
+    }
+    @include respond(tablet) {
+        margin-bottom: 5rem;
     }
     @include respond(landscapePhone) {
         height: 60vh;
+        margin-top: 9vh;
+    }
+    @include respond(largePhone) {
+        margin-top: 5vh;
+        margin-bottom: 3rem;
     }
 
     &__title {

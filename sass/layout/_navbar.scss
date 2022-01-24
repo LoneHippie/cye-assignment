@@ -1,12 +1,44 @@
 @import "../abstract/variables";
 @import "../abstract/mixins";
 
+.mobile-nav {
+    display: none;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 9.5rem;
+        background: #FFFFFF;
+
+        padding: 4rem 5rem;
+        width: 100%;
+
+        box-shadow: 0px 5px 5px 0.5px rgba(0, 0, 0, 0.2);
+
+        z-index: 800;
+
+        & > a {
+            text-decoration: none;
+            color: $nav-black;
+            font-size: 3rem;
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
 .nav {
     width: 100%;
     padding-top: 4rem;
     padding-bottom: 4rem;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 
     font-size: 1.3rem;
@@ -14,13 +46,21 @@
 
     height: 10vh;
 
-    @include respond(largePhone) {
-        font-size: 1.5rem;
-    }
     @include respond(landscapePhone) {
         padding-left: 2rem !important;
         padding-right: 2rem !important;
-        height: 7vh;
+        height: 10rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #FFFFFF;
+
+        box-shadow: 0px 5px 5px 0.5px rgba(0, 0, 0, 0.2);
+
+        z-index: 500;
+    }
+    @include respond(largePhone) {
+        font-size: 1.5rem;
     }
 
     &__section {
@@ -33,9 +73,30 @@
             background: $teal-primary;
             color: $white;
             padding: 0.75rem;
+            border: none;
+
+            margin-right: 3rem;
+            @include respond(landscapePhone) {
+                margin-right: 1.5rem;
+            }
+            @include respond(largePhone) {
+                margin-right: 0.3rem;
+            }
+
+            cursor: default;
+
+            @include respond(landscapePhone) {
+                cursor: pointer;
+            }
         }
 
-        &--left {
+        &__nav-links {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+
             & > :not(:last-child) {
                 display: inline;
                 margin-right: 3rem;
@@ -51,6 +112,13 @@
                 color: $nav-black;
             }
         }
+
+        &--left {
+           display: flex;
+           flex-direction: row;
+           align-items: center; 
+        }
+
         &--right {
             & > :not(:first-child) {
                 display: inline;
@@ -58,13 +126,13 @@
                 @include respond(landscapePhone) {
                     margin-left: 1.5rem;
                 }
-                @include respond(largePhone) {
-                    margin-left: 0.3rem;
-                }
             }
             & > a {
                 text-decoration: none;
                 color: $nav-black;
+                @include respond(landscapePhone) {
+                    font-size: 2rem;
+                }
             }
         }
     }
