@@ -12,6 +12,11 @@
     font-weight: 700;
     font-size: 3rem;
     line-height: 4.5rem;
+
+    @include respond(landscapePhone) {
+        font-size: 4.25rem;
+        line-height: 5.5rem;
+    }
 }
 
 .paragraph {
@@ -19,4 +24,9 @@
     font-size: 1.5rem;
     line-height: 2.8rem;
     color: $paragraph-black;
+
+    @include respond(landscapePhone) {
+        font-size: 2.25rem;
+        line-height: 3rem;
+    }
 }

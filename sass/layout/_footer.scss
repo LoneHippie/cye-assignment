@@ -6,13 +6,20 @@
     flex-direction: row;
     align-items: center;
     padding-right: 12rem;
+    height: 80rem;
+
     @include respond(laptop) {
         padding-right: 9.5rem;
     }
     @include respond(laptop-small) {
         padding-right: 5.5rem;
     }
-    height: 80rem;
+
+    @include respond(landscapePhone) {
+        flex-direction: column;
+        height: 100%;
+        padding-right: 0;
+    }
 
     &__display {
         width: 50%;
@@ -21,6 +28,12 @@
         background: #F6F6FB;
         border-radius: 0px 10px 0px 0px;
         position: relative;
+
+        @include respond(landscapePhone) {
+            width: 100%;
+            height: 30rem;
+            border-radius: 0px 0px 10px 10px;
+        }
 
         &--container {
             display: flex;
@@ -36,6 +49,12 @@
             }
             @include respond(landscapePhone) {
                 padding-left: 5rem;
+
+                & > div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
             }
         }
         &--icon {
@@ -50,6 +69,10 @@
             justify-content: center;
 
             margin-bottom: 5rem;
+
+            @include respond(landscapePhone) {
+                margin-right: 4rem;
+            }
 
             &--quote {
                 width: 2.5rem;
@@ -88,6 +111,11 @@
         }
         @include respond(laptop-small) {
             padding-left: 5.5rem;
+        }
+        @include respond(landscapePhone) {
+            width: 100%;
+            height: 100%;
+            padding: 6rem 5rem;
         }
 
         text-align: center !important;

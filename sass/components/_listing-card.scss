@@ -35,9 +35,17 @@
         font-weight: 700;
         line-height: 2.7rem;
         color: $teal-primary;
+        @include respond(landscapePhone) {
+            font-size: 2.4rem;
+            margin-bottom: 0.25rem;
+        }
     }
     & > p {
         font-size: 1.3rem !important;
+        @include respond(landscapePhone) {
+            font-size: 1.45rem !important;
+            line-height: 2.4rem;
+        }
     }
     & > div {
         font-weight: 400;
@@ -45,9 +53,15 @@
 
         & > b {
             font-size: 1.5rem;
+            @include respond(landscapePhone) {
+                font-size: 1.7rem;
+            }
         }
         & > span {
             font-size: 1.2rem;
+            @include respond(landscapePhone) {
+                font-size: 1.5rem;
+            }
         }
     }
 }

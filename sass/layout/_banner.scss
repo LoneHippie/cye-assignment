@@ -9,13 +9,30 @@
     padding-top: 3rem;
     padding-bottom: 6rem;
 
+    @include respond(landscapePhone) {
+        flex-direction: column;
+    }
+
     & > h2 {
         width: 40%;
         margin-right: 10%;
+
+        @include respond(landscapePhone) {
+            width: 100%;
+            margin-bottom: 5rem;
+        }
     }
 
     &__info {
         width: 50%;
+
+        @include respond(landscapePhone) {
+            width: 85%;
+
+            & > p {
+                margin-bottom: 1rem;
+            }
+        }
 
         & > span {
             color: $teal-primary;

@@ -21,7 +21,7 @@ html {
         font-size: 43%;
     }
     @include respond(largePhone) {
-        font-size: 38.5%;
+        font-size: 40%;
     }
     scroll-behavior: smooth;
 }

@@ -23,10 +23,19 @@
         @include respond(tablet) {
             width: 5rem;
         }
+        @include respond(landscapePhone) {
+            width: 12rem;
+            height: 6.75rem;
+        }
 
         & > img {
             height: 2.5rem;
             width: 2.5rem;
+
+            @include respond(landscapePhone) {
+                height: 3.5rem;
+                width: 3.5rem;
+            }
         }
     }
 
@@ -39,11 +48,19 @@
             line-height: 2.5rem;
 
             margin-bottom: 1rem;
+
+            @include respond(landscapePhone) {
+                font-size: 3rem;
+                margin-bottom: 1.7rem;
+            }
         }
 
         & > p {
             @include respond(tablet) {
                 max-width: 55%;
+            }
+            @include respond(landscapePhone) {
+                max-width: 70%;
             }
         }
     }

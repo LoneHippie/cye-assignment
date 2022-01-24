@@ -18,16 +18,31 @@
             height: 7rem;
             border-radius: 50%;
 
+            @include respond(landscapePhone) {
+                width: 10rem;
+                height: 10rem;
+            }
+
             &:nth-child(even) {
                 width: 5rem;
                 height: 5rem;
                 opacity: 0.5;
+
+                @include respond(landscapePhone) {
+                    width: 7.5rem;
+                    height: 7.5rem;
+                }
             }
             &:first-child,
             &:last-child {
                 width: 3rem;
                 height: 3rem;
                 opacity: 0.2;
+
+                @include respond(landscapePhone) {
+                    width: 5rem;
+                    height: 5rem;
+                }
             }
         }
     }
@@ -41,10 +56,17 @@
             color: #333333;
             font-size: 1.6rem;
             line-height: 2.8rem;
+
+            @include respond(landscapePhone) {
+                font-size: 2rem !important;
+            }
         }
         & > p {
             font-weight: 300 !important;
             font-size: 1.4rem !important;
+            @include respond(landscapePhone) {
+                font-size: 1.8rem !important;
+            }
         }
     }
 }
