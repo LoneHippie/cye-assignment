@@ -322,8 +322,6 @@ body {
   height: 10vh; }
   @media (max-width: 35.5em) {
     .nav {
-      padding-left: 2rem !important;
-      padding-right: 2rem !important;
       height: 10rem;
       position: fixed;
       top: 0;

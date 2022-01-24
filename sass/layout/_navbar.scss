@@ -47,8 +47,6 @@
     height: 10vh;
 
     @include respond(landscapePhone) {
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
         height: 10rem;
         position: fixed;
         top: 0;
